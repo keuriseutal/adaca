@@ -1,20 +1,29 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import ContactContext from '../../context/contact/contactContext';
 import ContactItem from './ContactItem';
+import Spinner from '../layout/Spinner';
 
 const Contacts = () => {
     const contactContext = useContext(ContactContext);
-    const { contacts, filtered } = contactContext;
+    const { getContacts, contacts, filtered, loading } = contactContext;
 
-    if((filtered ?? contacts).length === 0) {
+    useEffect(() => {
+        getContacts();
+        //eslint-disable-next-line
+    }, [])
+
+    if((filtered ?? contacts)?.length === 0) {
         return <h4>{filtered? 'No Contacts to Show' : 'Please add a contact'}</h4>
     }
 
     return (
         <>
-            {(filtered ?? contacts).map(contact => (
-                <ContactItem key={contact.id} contact={contact} />
-            ))}  
+            {contacts !== null && !loading ? 
+            (
+                (filtered ?? contacts).map(contact => (
+                    <ContactItem key={contact._id} contact={contact} />
+                ))  
+            ) : <Spinner />}
         </>
     )
 }
