@@ -17,7 +17,7 @@ app.use(express.json({ extended: false })); // to accept json as body on request
 //routes
 app.use('/api/users', require('./routes/users'));
 app.use('/api/auth', require('./routes/auth'));
-app.use('/api/contacts', require('./routes/contacts'));
+app.use('/api/tasks', require('./routes/tasks'));
 
 //server static assets in production
 if(process.env.NODE_ENV === 'production') {

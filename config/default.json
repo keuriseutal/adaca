@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://admin:admin@contactkeeper.bo0aq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://admin:admin@adacacodingexam.bo0aq.mongodb.net/AdacaCodingExam?retryWrites=true&w=majority&appName=AdacaCodingExam",    
     "jwtSecret": "secret"
 }

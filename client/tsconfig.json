@@ -1,0 +1,35 @@
+{
+    "extends": "./node_modules/gts/tsconfig-google.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "lib": ["DOM", "DOM.Iterable", "ESNext"],
+        "allowJs": false,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "rootDir": ".",
+        "outDir": "build",
+        "baseUrl": "src",
+        "paths": {
+            "@atoms": [ "components/ui/atoms/index.ts" ],
+            "@molecules": [ "components/ui/molecules/index.ts" ],
+            "@organisms": [ "components/ui/organisms/index.ts" ],
+            "@templates": [ "components/templates/index.ts" ],
+            "@pages": [ "components/pages/index.ts" ],
+            "@models": [ "models/index.ts" ],
+            "@contexts": [ "contexts/index.ts" ],
+            "@providers": [ "providers/index.ts" ],
+        }
+    },
+    "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.css", "src/**/*.scss"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}

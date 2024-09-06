@@ -12,7 +12,7 @@ const User = require('../models/User');
 // @access  public
 router.post('/', [
     check('name', 'Please add a name').not().isEmpty(),
-    check('email', 'Please a valid email').isEmail(),
+    check('email', 'Please enter a valid email').isEmail(),
     check('password', 'Please enter a password with 6 or more characters').isLength({
         min: 6
     })
